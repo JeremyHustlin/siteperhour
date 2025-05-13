@@ -46,7 +46,11 @@ const ContactSection = () => {
         return;
       }
 
-      await sendEmail(formData);
+      await sendEmail({
+        ...formData,
+        // Add a clear subject line that includes the sender's name
+        subject: formData.subject || `New Contact Form Message from ${formData.name}`
+      });
       
       toast({
         title: "Message sent!",
