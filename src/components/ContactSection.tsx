@@ -1,13 +1,12 @@
 
 import { useState, useEffect } from "react";
-import { Send, Phone, Mail, MapPin, Settings } from "lucide-react";
+import { Send, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
 import { Card, CardContent } from "@/components/ui/card";
-import { Link } from "react-router-dom";
-import { initEmailService, sendEmail, isEmailServiceConfigured } from "@/utils/emailService";
+import { initEmailService, sendEmail } from "@/utils/emailService";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -18,12 +17,10 @@ const ContactSection = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isConfigured, setIsConfigured] = useState(false);
 
   useEffect(() => {
-    // Initialize EmailJS when component mounts
+    // Initialize EmailJS when component mounts with pre-configured credentials
     initEmailService();
-    setIsConfigured(isEmailServiceConfigured());
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -45,15 +42,7 @@ const ContactSection = () => {
           description: "Please fill out all required fields",
           variant: "destructive"
         });
-        return;
-      }
-
-      if (!isConfigured) {
-        toast({
-          title: "Email service not configured",
-          description: "Please set up your email service to receive messages",
-          variant: "destructive"
-        });
+        setIsSubmitting(false);
         return;
       }
 
@@ -111,18 +100,6 @@ const ContactSection = () => {
             Have a project in mind or want to know more? Send me a message and I'll get back to you as soon as possible.
           </p>
         </div>
-
-        {!isConfigured && (
-          <div className="mb-8 p-4 bg-muted rounded-lg border border-border/50 text-center">
-            <p className="mb-4">Email service is not configured. Set up your email service to receive messages in your Gmail.</p>
-            <Link to="/email-setup">
-              <Button className="bg-primary hover:bg-primary/80 flex items-center gap-2">
-                <Settings className="h-4 w-4" />
-                Configure Email Service
-              </Button>
-            </Link>
-          </div>
-        )}
 
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
@@ -188,7 +165,7 @@ const ContactSection = () => {
               <Button 
                 type="submit" 
                 className="w-full sm:w-auto bg-primary hover:bg-primary/80"
-                disabled={isSubmitting || !isConfigured}
+                disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
                 <Send className="ml-2 h-4 w-4" />

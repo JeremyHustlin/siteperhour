@@ -14,72 +14,43 @@ interface EmailData {
   message: string;
 }
 
-// Initialize EmailJS with public key from saved settings
-export const initEmailService = () => {
-  const savedConfig = localStorage.getItem('emailServiceConfig');
-  if (savedConfig) {
-    const { service, config } = JSON.parse(savedConfig);
-    if (service === 'emailjs' && config.publicKey) {
-      emailjs.init(config.publicKey);
-      return true;
-    }
+// EmailJS credentials - pre-configured
+const EMAIL_CONFIG = {
+  service: 'emailjs',
+  config: {
+    serviceId: 'service_3yy9xa9',
+    templateId: 'template_0gugh5f',
+    publicKey: 'pqnAFS_ayDh7oxufo'
   }
-  return false;
+};
+
+// Initialize EmailJS with public key
+export const initEmailService = () => {
+  emailjs.init(EMAIL_CONFIG.config.publicKey);
+  return true;
 };
 
 // Send email using EmailJS
 export const sendEmail = async (data: EmailData): Promise<boolean> => {
   try {
-    const savedConfig = localStorage.getItem('emailServiceConfig');
-    if (!savedConfig) {
-      throw new Error('Email service not configured');
-    }
-
-    const { service, config } = JSON.parse(savedConfig);
+    const { serviceId, templateId } = EMAIL_CONFIG.config as EmailConfig;
     
-    if (service === 'emailjs') {
-      const { serviceId, templateId } = config as EmailConfig;
-      
-      if (!serviceId || !templateId) {
-        throw new Error('EmailJS not fully configured');
-      }
+    const templateParams = {
+      name: data.name,
+      email: data.email,
+      subject: data.subject || 'Contact Form Submission',
+      message: data.message
+    };
 
-      const templateParams = {
-        name: data.name,
-        email: data.email,
-        subject: data.subject || 'Contact Form Submission',
-        message: data.message
-      };
-
-      await emailjs.send(serviceId, templateId, templateParams);
-      return true;
-    } 
-    else if (service === 'smtp') {
-      // In a real implementation, you would make an API call to your backend
-      // which would handle the SMTP connection
-      console.log('SMTP method would require a backend API');
-      return false;
-    }
-    
-    return false;
+    await emailjs.send(serviceId, templateId, templateParams);
+    return true;
   } catch (error) {
     console.error('Failed to send email:', error);
     throw error;
   }
 };
 
-// Check if email service is configured
+// Email service is now always configured
 export const isEmailServiceConfigured = (): boolean => {
-  const savedConfig = localStorage.getItem('emailServiceConfig');
-  if (!savedConfig) return false;
-  
-  const { service, config } = JSON.parse(savedConfig);
-  
-  if (service === 'emailjs') {
-    return !!(config.serviceId && config.templateId && config.publicKey);
-  } else if (service === 'smtp') {
-    return !!(config.host && config.port && config.username && config.password);
-  }
-  
-  return false;
+  return true;
 };
