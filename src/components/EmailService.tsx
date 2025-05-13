@@ -217,7 +217,7 @@ const EmailService = () => {
             <ol className="list-decimal list-inside space-y-2 mt-2 text-muted-foreground">
               <li>Sign up for a free account at <a href="https://www.emailjs.com/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">emailjs.com</a></li>
               <li>Add a new email service and connect it to your Gmail account</li>
-              <li>Create an email template with variables like: {{name}}, {{email}}, {{subject}}, {{message}}</li>
+              <li>Create an email template with variables like: {'{{name}}'}, {'{{email}}'}, {'{{subject}}'}, {'{{message}}'}</li>
               <li>Copy your Service ID, Template ID, and Public Key</li>
               <li>Enter these details in the EmailJS Configuration section above and save</li>
               <li>Messages from the contact form will now be sent to your Gmail account</li>
