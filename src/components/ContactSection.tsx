@@ -1,6 +1,6 @@
-
 import { useState, useEffect } from "react";
-import { Send, Phone, Mail, MapPin } from "lucide-react";
+import { Send, Phone, Mail, MapPin, User } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -80,17 +80,18 @@ const ContactSection = () => {
     {
       icon: <Phone className="h-5 w-5 text-primary" />,
       title: "Phone",
-      details: "+1 234 567 8901",
+      details: "+373 79 33 11 04",
+      name: "Mihail Mihail"
     },
     {
       icon: <Mail className="h-5 w-5 text-primary" />,
       title: "Email",
-      details: "youremail@example.com",
+      details: "mihail.mihai2001@gmail.com"
     },
     {
       icon: <MapPin className="h-5 w-5 text-primary" />,
       title: "Location",
-      details: "New York, NY, USA",
+      details: "New York, NY, USA"
     }
   ];
 
@@ -183,8 +184,11 @@ const ContactSection = () => {
                 <CardContent className="p-6 flex items-start gap-4">
                   <div className="bg-muted p-3 rounded-full">{item.icon}</div>
                   <div>
-                    <h4 className="font-medium">{item.title}</h4>
-                    <p className="text-muted-foreground">{item.details}</p>
+                    <h4 className="font-medium text-white">{item.title}</h4>
+                    <p className="text-white">{item.details}</p>
+                    {item.name && (
+                      <p className="text-white font-medium mb-1">Name: {item.name}</p>
+                    )}
                   </div>
                 </CardContent>
               </Card>
