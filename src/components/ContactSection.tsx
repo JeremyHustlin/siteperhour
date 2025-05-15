@@ -91,7 +91,7 @@ const ContactSection = () => {
     {
       icon: <MapPin className="h-5 w-5 text-primary" />,
       title: "Location",
-      details: "New York, NY, USA"
+      details: "Chisinau, Moldova"
     }
   ];
 

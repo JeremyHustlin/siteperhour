@@ -18,7 +18,7 @@ const HeroSection = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.6s' }}>
           <Button size="lg" className="bg-primary hover:bg-primary/80">
-            <a href="#projects">View My Work</a>
+            <a href="https://github.com/JeremyHustlin?tab=repositories">View My Work</a>
           </Button>
           <Button size="lg" variant="outline" className="border-white/20 hover:bg-white/10">
             <a href="#contact">Contact Me</a>
