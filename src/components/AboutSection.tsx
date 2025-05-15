@@ -44,10 +44,10 @@ const AboutSection = () => {
           
           <div className="order-1 md:order-2 aspect-square bg-muted rounded-2xl overflow-hidden relative">
             <div className="absolute inset-0 bg-gradient-to-tr from-primary/30 to-accent/30 mix-blend-overlay"></div>
-            <div className="w-full h-full">
-                <img 
-                    src="/images/coding.jpg" 
-                    alt="Coding illustration" 
+            <div className="w-full h-full relative">
+                <img
+                    src="/images/software-development-programming-coding-vector-29570719.jpg"
+                    alt="Coding illustration"
                     className="w-full h-full object-cover"
                 />
             </div>
