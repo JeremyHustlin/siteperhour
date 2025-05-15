@@ -1,14 +1,20 @@
+User-agent: *
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+Clean-param: utm_source&utm_medium&utm_campaign
+
+User-agent: Twitterbot
+Allow: /
+
+X-Robots-Tag: noai, noimageai
+
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
-User-agent: Twitterbot
-Allow: /
-
 User-agent: facebookexternalhit
-Allow: /
-
-User-agent: *
 Allow: /
