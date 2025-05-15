@@ -47,7 +47,7 @@ const AboutSection = () => {
             <div 
                 className="w-full h-full" 
                 style={{ 
-                    backgroundImage: `url('/software-development-programming-coding-vector-29570719.jpg')`,
+                    backgroundImage: `url('images/download.png')`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
                 }}
