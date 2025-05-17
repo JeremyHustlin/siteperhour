@@ -11,10 +11,6 @@
         {
           "key": "X-Content-Type-Options",
           "value": "nosniff"
-        },
-        {
-          "key": "og:image",
-          "value": "/images/your-preview-image.jpg"
         }
       ]
     }
@@ -23,11 +19,7 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "installCommand": "npm install --legacy-peer-deps",
-  "routes": [
-    {
-      "src": "/[^.]+",
-      "dest": "/",
-      "status": 200
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
   ]
 } 
