@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import ProjectCard3D from "./ProjectCard3D";
 
 const ProjectsSection = () => {
   const projects = [
@@ -48,32 +47,15 @@ const ProjectsSection = () => {
         
         <div className="grid sm:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="bg-card overflow-hidden border-none group">
-              <div className="h-60 overflow-hidden bg-muted">
-                <div 
-                  className="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
-                  style={{ backgroundImage: `url(${project.image})` }}
-                >
-                  <div className="w-full h-full bg-black/50 flex flex-col justify-end p-6">
-                    <p className="text-primary text-sm font-medium mb-1">{project.category}</p>
-                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-white/70 text-sm">{project.description}</p>
-                  </div>
-                </div>
-              </div>
-              <CardFooter className="p-4 bg-card">
-                <a 
-                    href={project.url} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="ml-auto"
-                >
-                    <Button variant="ghost" className="flex items-center gap-2 hover:text-primary">
-                        {project.buttonText || "View Details"} <ArrowRight size={16} />
-                    </Button>
-                </a>
-              </CardFooter>
-            </Card>
+            <ProjectCard3D
+              key={index}
+              title={project.title}
+              category={project.category}
+              image={project.image}
+              description={project.description}
+              url={project.url}
+              buttonText={project.buttonText}
+            />
           ))}
         </div>
         

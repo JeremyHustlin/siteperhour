@@ -1,6 +1,5 @@
-
 import { Code, Layout, BarChart, Rocket } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import ServiceCard3D from "./ServiceCard3D";
 
 const ServicesSection = () => {
   const services = [
@@ -39,17 +38,12 @@ const ServicesSection = () => {
         
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
-            <Card key={index} className="bg-card border-border/50 hover:border-primary/50 transition-all duration-300 h-full">
-              <CardHeader>
-                <div className="mb-4">{service.icon}</div>
-                <CardTitle>{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-muted-foreground">
-                  {service.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
+            <ServiceCard3D
+              key={index}
+              icon={service.icon}
+              title={service.title}
+              description={service.description}
+            />
           ))}
         </div>
       </div>
