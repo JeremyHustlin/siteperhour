@@ -6,21 +6,21 @@ const ProjectsSection = () => {
     {
       title: "E-commerce Website",
       category: "Web Development",
-      image: "/project-1.jpg",
+      image: "/images/ecomerce.avif",
       description: "A fully responsive e-commerce platform built with React and Node.js.",
       url: "https://haskelshop.com/"
     },
     {
       title: "Corporate Rebrand",
       category: "UI/UX Design",
-      image: "/project-2.jpg",
+      image: "/images/rebranding.avif",
       description: "Complete visual identity redesign for a services company.",
       url: "https://perhour.great-site.net/"
     },
     {
       title: "Mobile App",
       category: "App Development",
-      image: "/project-3.jpg",
+      image: "/images/mobile_app.avif",
       description: "A cross-platform mobile application for tracking fitness goals.",
       url: "https://your-app-site.com",
       buttonText: "In Progress"
@@ -28,7 +28,7 @@ const ProjectsSection = () => {
     {
       title: "Marketing Website",
       category: "Web Design",
-      image: "/project-4.jpg",
+      image: "/images/marketing.avif",
       description: "SEO-optimized landing pages for a SaaS product launch.",
       url: "http://www.vanellaromedomus.com/en/home-page-eng/"
     }

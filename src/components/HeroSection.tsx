@@ -67,19 +67,27 @@ const HeroSection = () => {
             transition: 'all 0.5s ease-out'
           }}
         >
+          <a 
+            href="https://github.com/JeremyHustlin?tab=repositories"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
           <Button 
             size="lg" 
             className="bg-primary hover:bg-primary/80 transition-all duration-300"
           >
-            <a href="https://github.com/JeremyHustlin?tab=repositories">View My Work</a>
+              View My Work
           </Button>
+          </a>
+          <a href="#contact">
           <Button 
             size="lg" 
             variant="outline" 
             className="border-white/20 hover:bg-white/10 transition-all duration-300"
           >
-            <a href="#contact">Contact Me</a>
+              Contact Me
           </Button>
+          </a>
         </div>
       </div>
 

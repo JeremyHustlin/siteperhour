@@ -1,4 +1,3 @@
-
 import { Github, Linkedin, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
@@ -95,7 +94,16 @@ const Footer = () => {
         </div>
         
         <div className="pt-8 text-center text-muted-foreground">
-          <p>© 2025 YourName. All rights reserved.</p>
+          <p className="mb-4">© 2025 YourName. All rights reserved.</p>
+          <div className="flex justify-center gap-4 text-sm">
+            <a href="/privacy-policy" className="hover:text-primary transition-colors">
+              Privacy Policy
+            </a>
+            <span>•</span>
+            <a href="/terms" className="hover:text-primary transition-colors">
+              Terms & Conditions
+            </a>
+          </div>
         </div>
       </div>
     </footer>
