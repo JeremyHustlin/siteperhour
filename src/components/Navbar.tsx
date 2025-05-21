@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
@@ -15,12 +14,25 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToElement = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setMobileMenuOpen(false);
+    }
+  };
+
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
     { name: 'Projects', href: '#projects' },
     { name: 'Contact', href: '#contact' },
+  ];
+
+  const legalLinks = [
+    { name: 'Privacy Policy', id: 'privacy-policy-section' },
+    { name: 'Terms & Conditions', id: 'terms-section' },
   ];
 
   return (
@@ -44,6 +56,15 @@ const Navbar = () => {
             >
               {link.name}
             </a>
+          ))}
+          {legalLinks.map((link) => (
+            <button
+              key={link.name}
+              onClick={() => scrollToElement(link.id)}
+              className="text-muted-foreground hover:text-white transition-colors font-medium"
+            >
+              {link.name}
+            </button>
           ))}
           <Button className="bg-primary hover:bg-primary/80">
             <a href="#contact">Get in Touch</a>
@@ -72,6 +93,15 @@ const Navbar = () => {
               >
                 {link.name}
               </a>
+            ))}
+            {legalLinks.map((link) => (
+              <button
+                key={link.name}
+                onClick={() => scrollToElement(link.id)}
+                className="text-muted-foreground hover:text-white py-2 transition-colors text-left"
+              >
+                {link.name}
+              </button>
             ))}
             <Button className="bg-primary hover:bg-primary/80 w-full">
               <a href="#contact" onClick={() => setMobileMenuOpen(false)}>

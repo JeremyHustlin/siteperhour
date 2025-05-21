@@ -51,9 +51,9 @@ const Footer = () => {
         <div className="w-full border-t border-border pt-6 mt-6 flex flex-col md:flex-row gap-2 justify-center items-center text-base text-white/80">
           <span>© 2025 YourName. All rights reserved.</span>
           <span className="hidden md:inline">|</span>
-          <a href="/privacy-policy" className="hover:text-primary transition-colors underline underline-offset-4">Privacy Policy</a>
+          <a id="privacy-policy-section" href="/privacy-policy" className="hover:text-primary transition-colors underline underline-offset-4">Privacy Policy</a>
           <span>•</span>
-          <a href="/terms" className="hover:text-primary transition-colors underline underline-offset-4">Terms & Conditions</a>
+          <a id="terms-section" href="/terms" className="hover:text-primary transition-colors underline underline-offset-4">Terms & Conditions</a>
         </div>
       </div>
     </footer>

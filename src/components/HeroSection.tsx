@@ -61,7 +61,7 @@ const HeroSection = () => {
           I build beautiful, functional websites and web applications that help businesses and individuals achieve their goals.
         </p>
         <div 
-          className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in"
+          className="flex flex-col sm:flex-row items-center gap-4 justify-center animate-fade-in"
           style={{ 
             animationDelay: '0.6s',
             transition: 'all 0.5s ease-out'
@@ -72,7 +72,7 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-white/20 hover:bg-white/10 transition-all duration-300"
+              className="w-full sm:w-auto border-white/20 hover:bg-white/10 transition-all duration-300"
             >
               Contact Me
             </Button>
@@ -80,7 +80,7 @@ const HeroSection = () => {
           <a href="#projects">
             <Button 
               size="lg" 
-              className="bg-primary hover:bg-primary/80 transition-all duration-300"
+              className="w-full sm:w-auto bg-primary hover:bg-primary/80 transition-all duration-300"
             >
               View My Work
             </Button>
@@ -89,7 +89,7 @@ const HeroSection = () => {
             <Button 
               size="lg" 
               variant="outline"
-              className="flex items-center gap-2 border-white/20 hover:bg-white/10 transition-all duration-300"
+              className="w-full sm:w-auto flex items-center gap-2 border-white/20 hover:bg-white/10 transition-all duration-300"
             >
               <Github size={20} />
               GitHub Profile
