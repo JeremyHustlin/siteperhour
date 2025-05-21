@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ParticlesBackground from "./ParticlesBackground";
 import { useEffect, useState } from "react";
@@ -67,26 +67,33 @@ const HeroSection = () => {
             transition: 'all 0.5s ease-out'
           }}
         >
-          <a 
-            href="https://github.com/JeremyHustlin?tab=repositories"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-          <Button 
-            size="lg" 
-            className="bg-primary hover:bg-primary/80 transition-all duration-300"
-          >
-              View My Work
-          </Button>
-          </a>
+          
           <a href="#contact">
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="border-white/20 hover:bg-white/10 transition-all duration-300"
-          >
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="border-white/20 hover:bg-white/10 transition-all duration-300"
+            >
               Contact Me
-          </Button>
+            </Button>
+          </a>
+          <a href="#projects">
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/80 transition-all duration-300"
+            >
+              View My Work
+            </Button>
+          </a>
+          <a href="https://github.com/JeremyHustlin" target="_blank" rel="noopener noreferrer">
+            <Button 
+              size="lg" 
+              variant="outline"
+              className="flex items-center gap-2 border-white/20 hover:bg-white/10 transition-all duration-300"
+            >
+              <Github size={20} />
+              GitHub Profile
+            </Button>
           </a>
         </div>
       </div>
